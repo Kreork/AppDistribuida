@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
 // Obtenemos el ancho de la pantalla del dispositivo
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -15,6 +15,13 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'black',
   },
+  scrollViewContainer: {
+    flex: 1, // Para que el ScrollView ocupe el espacio restante
+  },
+  tableContainer: {
+    marginHorizontal: 10, // Añadimos margen para que no esté pegado a los bordes
+    paddingBottom: 60, // Espacio adicional para que el botón no tape la tabla
+  },
   tableHeader: {
     flexDirection: 'row',
     backgroundColor: '#438686',
@@ -25,7 +32,7 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
-    width: width * 0.3, // Ajuste basado en el ancho de la pantalla
+    width: width * 0.28, // Ajuste basado en el ancho de la pantalla para hacerlo más pequeño
   },
   tableRow: {
     flexDirection: 'row',
@@ -42,6 +49,18 @@ export const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     color: '#333',
-    width: width * 0.3, // Ajuste basado en el ancho de la pantalla
+    width: width * 0.28, // Ajuste basado en el ancho de la pantalla para hacerlo más pequeño
+  },
+  switchCell: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  // Ajuste del botón para que esté fijo en la parte inferior
+  buttonContainerFixed: {
+    position: 'absolute',
+    bottom: 16,
+    left: 16,
+    right: 16,
   },
 });
